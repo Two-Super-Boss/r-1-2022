@@ -31,6 +31,7 @@ write.csv(leadership, "leadership.csv")
 # 将数据中的变量“经理人”和“日期”分别改为“经理人编号”和“调查日期” 。
 names(leadership)[1] <- "经理人编号"
 names(leadership)[2] <- "调查日期"
+leadership
 
 # 将年龄“99”修改为“49”，并保存
 leadership$`年龄` <- gsub(99, 49, leadership$`年龄`)
@@ -48,11 +49,11 @@ new_leadership <- na.omit(leadership)
 new_leadership
 
 # 求出所有经理人年龄的平均值
-average <- mean(leadership$`年龄`)
+mean(as.numeric(leadership$`年龄`))
 
 # 将leadership数据分别按照经理人的年龄升序、降序排序
-leadership[order(leadership$`年龄`),]
-leadership[order(-leadership$`年龄`),]
+leadership[order(as.numeric(leadership$`年龄`)),]
+leadership[order(-as.numeric(leadership$`年龄`)),]
 
 # 选择所有年龄大于23岁的女性，并且仅保留变量国籍、性别、年龄、q4和q5
 leadership[leadership$`年龄` > 23 & leadership$`性别` == "F", c("国籍", "性别", "年龄", "q4", "q5")]
