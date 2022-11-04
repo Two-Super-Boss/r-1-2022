@@ -6,7 +6,7 @@ orig_data <- read.csv("book2.1.csv", header = FALSE)
 
 # 用R语言制作一张频数分布表
 table <- table(orig_data)
-table
+data.frame(table)
 
 # 绘制一张条形图和帕累托图，反映评价等级的分布。
 
