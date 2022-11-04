@@ -27,4 +27,4 @@ leadership <-
 leadership
 
 save(leadership, file = "leadership.RData")
-write.csv(leadership,"leadership.csv")
+write.csv(leadership, "leadership.csv")
